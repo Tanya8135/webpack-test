@@ -2,6 +2,8 @@
 
 This project has been created using **webpack-cli**, you can now run
 
+-to bundle your application-
+
 ```
 npm run build - режим продакшн
 ```
@@ -9,7 +11,6 @@ npm run build - режим продакшн
 npm start - режим розробки
 
 ```
--to bundle your application-
 
 ```
 **_Розробка коду_** Ваш вихідний код (HTML, CSS, JavaScript) буде розміщений у
