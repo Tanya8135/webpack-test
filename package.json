@@ -26,9 +26,10 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.23.3",
     "@webpack-cli/generators": "^3.0.7",
     "autoprefixer": "^10.4.12",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^8.3.0",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "imagemin": "^8.0.1",
@@ -46,6 +47,10 @@
     "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "copy-webpack-plugin": "^11.0.0",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swiper": "^11.0.4"
   }
 }

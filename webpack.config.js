@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -20,9 +21,19 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
                     },
                 },
+            },
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                    }
+                }
             },
             {
                 test: /\.css$/,
@@ -31,6 +42,19 @@ module.exports = {
                     'css-loader',
                     'postcss-loader',
                 ],
+            },
+            {
+                test: /\.module\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                        },
+                    },
+                    'postcss-loader',
+                ]
             },
             {
                 test: /\.scss$/,
@@ -53,6 +77,11 @@ module.exports = {
         new ImageminWebpackPlugin({
             test: /\.(jpe?g|png|gif|svg)$/i,
             disable: process.env.NODE_ENV !== 'production',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'src/images', to: 'images' }
+            ]
         })
     ]
 };
