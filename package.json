@@ -12,6 +12,9 @@
     "watch": "webpack --watch",
     "serve": "webpack serve"
   },
+  "tags": [
+    "swiper"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tanya8135/webpack.git"
@@ -51,6 +54,6 @@
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "swiper": "^11.0.4"
+    "swiper": "^10.0.0"
   }
 }
