@@ -10,98 +10,61 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
-    />
+
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
 
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="slick/slick-theme.css" />
+
+    <!-- SWIPER -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /> -->
   </head>
   <body>
     <h1>Webpack</h1>
     <img src="./images/naturale.jpg" alt="naturale" width="150" />
 
-    <!-- slide -->
-    <div class="box-slide">
-      <div class="slick_slide">
-        <article class="article_slick">
-          <img src="./images/naturale.jpg" alt="naturale" width="150" />
-          <p class="text_slick">Price</p>
-          <p class="text_slick">color</p>
-          <div class="color"></div>
-        </article>
+    <!-- Підключення JS || REACT -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <article class="article_swiper">
+            <img
+              src="./images/naturale.jpg"
+              alt="naturale"
+              width="150"
+              class="img"
+            />
+            <p class="text_swiper">Price</p>
+            <p class="text_swiper">color</p>
+          </article>
+        </div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
       </div>
-      <div class="slick_slide">
-        <img src="./images/naturale.jpg" alt="naturale" width="150" />
+      <!-- <div class="swiper-pagination"></div> -->
+
+      <div class="btn_container">
+        <button class="swiper-button-prev"></button>
+        <button class="swiper-button-next"></button>
       </div>
-      <div class="slick_slide">
-        <img src="./images/naturale.jpg" alt="naturale" width="150" />
-      </div>
-      <div class="slick_slide">
-        <img src="./images/naturale.jpg" alt="naturale" width="150" />
-      </div>
-      <div class="slick_slide">
-        <img src="./images/naturale.jpg" alt="naturale" width="150" />
-      </div>
-      <div class="slick_slide">
-        <img src="./images/naturale.jpg" alt="naturale" width="150" />
-      </div>
-      <div class="slick_slide">
-        <img src="./images/naturale.jpg" alt="naturale" width="150" />
-      </div>
-      <div class="slick_slide">
-        <img src="./images/naturale.jpg" alt="naturale" width="150" />
-      </div>
+
+      <!-- <div class="swiper-scrollbar"></div> -->
     </div>
 
-    <!-- Підключення JS || REACT -->
     <div id="app"></div>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
-    <!-- <script src="./test.js"></script> -->
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('.box-slide').slick({
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: false,
-        });
-
-        let filtered = false;
-
-        $('.js-filter').on('click', function () {
-          if (filtered === false) {
-            $('.box-slide').slick('slickFilter', ':even');
-            $(this).text('Unfilter Slides');
-            filtered = true;
-          } else {
-            $('.box-slide').slick('slickUnfilter');
-            $(this).text('Filter Slides');
-            filtered = false;
-          }
-        });
-      });
-    </script>
-
-    <!-- ??? -->
-    <!-- <script>
-      if ("serviceWorker" in navigator) {
-          window.addEventListener("load", () => {
-              navigator.serviceWorker
-                  .register("service-worker.js")
-                  .then((registration) => {
-                      console.log("Service Worker registered: ", registration);
-                  })
-                  .catch((registrationError) => {
-                      console.error("Service Worker registration failed: ", registrationError);
-                  });
-          });
-      }
-  </script> -->
+    <!-- SWIPER -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script src="./index.js"></script>
   </body>
 </html>
